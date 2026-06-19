@@ -1,0 +1,32 @@
+# Core dependencies for Persian AI text detection experiments
+
+# Hugging Face stack
+transformers>=4.40,<5
+datasets>=2.18
+accelerate>=0.30
+sentencepiece>=0.2
+
+# Training & evaluation
+torch>=2.1
+scikit-learn>=1.4
+numpy>=1.24
+
+# Persian NLP
+hazm>=0.9
+
+# Wikipedia extraction
+requests>=2.31
+beautifulsoup4>=4.12
+wikipedia-api>=0.6
+
+# AI generation (AvalAI uses OpenAI-compatible API)
+openai>=1.0
+tenacity>=8.2
+
+# Visualization
+matplotlib>=3.7
+seaborn>=0.13
+
+# Jupyter (for local notebook execution; not needed on Colab)
+jupyter>=1.0
+ipykernel>=6.0

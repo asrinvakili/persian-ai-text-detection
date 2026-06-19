@@ -1,0 +1,47 @@
+{
+  "experiment": "robustness_paraphrasing",
+  "description": "The baseline classifier is evaluated, without retraining, on a test set where all 600 AI-generated texts have been paraphrased via back-translation through English. Human texts (200) remain unchanged.",
+  "timestamp": "2026-06-18T17:30:00",
+  "attack": {
+    "type": "back_translation",
+    "fa_to_en_model": "persiannlp/mt5-small-parsinlu-opus-translation_fa_en",
+    "en_to_fa_model": "persiannlp/mt5-small-parsinlu-translation_en_fa",
+    "num_paraphrased": 600
+  },
+  "baseline_accuracy": 0.9775,
+  "paraphrased_accuracy": 0.4950,
+  "f1_macro_paraphrased": 0.4945,
+  "accuracy_drop": 0.4825,
+  "human_accuracy": 0.9300,
+  "ai_accuracy_paraphrased": 0.3500,
+  "ai_accuracy_drop": 0.6400,
+  "by_model": {
+    "deepseek-v3.1": {
+      "accuracy": 0.3600,
+      "count": 200,
+      "correct": 72
+    },
+    "gpt-4o-mini": {
+      "accuracy": 0.3350,
+      "count": 200,
+      "correct": 67
+    },
+    "gemini-2.5-flash-lite": {
+      "accuracy": 0.3550,
+      "count": 200,
+      "correct": 71
+    }
+  },
+  "confusion_matrix_after": {
+    "human_predicted_human": 186,
+    "human_predicted_ai": 14,
+    "ai_predicted_human": 390,
+    "ai_predicted_ai": 210
+  },
+  "key_findings": [
+    "AI accuracy drops by 64 percentage points (from ~0.99 to 0.35) — below chance (0.50).",
+    "Human accuracy remains at 0.93 (unchanged), confirming the model learned LLM stylistic signatures rather than abstract 'AI-ness'.",
+    "Drop is uniform across all three generators (0.335–0.360), so brittleness is independent of which generator produced the text.",
+    "Comparable English work (Krishna et al., 2023, DIPPER attack on RoBERTa-Large-Detector) reported a 20-point drop. The Persian classifier here drops roughly 3x more, partly because parsinlu paraphrases are more aggressive than DIPPER outputs."
+  ]
+}

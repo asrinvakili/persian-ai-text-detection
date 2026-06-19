@@ -1,0 +1,41 @@
+{
+  "experiment": "train_on_two_ablation",
+  "description": "Three classifiers, each trained on two AI generators + all human texts (leave-one-generator-out). The third generator is held out from training and only seen at test time.",
+  "timestamp": "2026-06-18T14:30:00",
+  "class_weights": [2.0, 1.0],
+  "train_size_per_classifier": 2100,
+  "results": {
+    "train_deepseek_gpt": {
+      "held_out": "gemini-2.5-flash-lite",
+      "acc_overall": 0.9775,
+      "acc_on_seen": {
+        "deepseek-v3.1": 0.990,
+        "gpt-4o-mini": 1.000
+      },
+      "acc_on_unseen": 0.985
+    },
+    "train_deepseek_gemini": {
+      "held_out": "gpt-4o-mini",
+      "acc_overall": 0.9812,
+      "acc_on_seen": {
+        "deepseek-v3.1": 0.980,
+        "gemini-2.5-flash-lite": 0.990
+      },
+      "acc_on_unseen": 0.990
+    },
+    "train_gpt_gemini": {
+      "held_out": "deepseek-v3.1",
+      "acc_overall": 0.9738,
+      "acc_on_seen": {
+        "gpt-4o-mini": 0.995,
+        "gemini-2.5-flash-lite": 0.990
+      },
+      "acc_on_unseen": 0.945
+    }
+  },
+  "key_findings": [
+    "Adding a second training generator boosts accuracy on the held-out DeepSeek from 0.825 (GPT-only) to 0.945 (GPT+Gemini) — a 12 percentage point improvement.",
+    "Only the GPT+Gemini configuration shows a drop on unseen DeepSeek (0.945 vs baseline 0.99). The other two configurations almost match baseline performance.",
+    "Training diversity is the dominant factor in cross-generator generalization."
+  ]
+}

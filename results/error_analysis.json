@@ -1,0 +1,67 @@
+{
+  "experiment": "error_analysis",
+  "timestamp": "2026-06-18T12:23:11.374217",
+  "overall_accuracy": 0.9775,
+  "by_model": {
+    "gemini-2.5-flash-lite": {
+      "accuracy": 0.99,
+      "count": 200,
+      "mean_confidence": 8.016333618164062
+    },
+    "gpt-4o-mini": {
+      "accuracy": 1.0,
+      "count": 200,
+      "mean_confidence": 8.084375
+    },
+    "human": {
+      "accuracy": 0.93,
+      "count": 200,
+      "mean_confidence": 6.990879402160645
+    },
+    "deepseek-v3.1": {
+      "accuracy": 0.99,
+      "count": 200,
+      "mean_confidence": 7.8955224609375
+    }
+  },
+  "by_category": {
+    "تاریخ و زندگی‌نامه": {
+      "accuracy": 1.0,
+      "count": 160
+    },
+    "علوم نظری": {
+      "accuracy": 0.9625,
+      "count": 160
+    },
+    "علوم انسانی": {
+      "accuracy": 0.9625,
+      "count": 160
+    },
+    "علوم مهندسی": {
+      "accuracy": 0.9875,
+      "count": 160
+    },
+    "علوم پزشکی": {
+      "accuracy": 0.975,
+      "count": 160
+    }
+  },
+  "by_length": {
+    "۴۰–۵۰": {
+      "accuracy": 0.9635036496350365,
+      "count": 274
+    },
+    "۵۰–۸۰": {
+      "accuracy": 0.9870967741935484,
+      "count": 310
+    },
+    "۸۰–۱۲۰": {
+      "accuracy": 0.9808917197452229,
+      "count": 157
+    },
+    "۱۲۰+": {
+      "accuracy": 0.9830508474576272,
+      "count": 59
+    }
+  }
+}

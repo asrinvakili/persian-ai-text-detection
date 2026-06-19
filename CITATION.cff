@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code or its results in academic work, please cite the accompanying paper."
+title: "Persian AI-Generated Text Detection"
+version: 1.0.0
+date-released: "2026-06-19"
+license: MIT
+repository-code: "https://github.com/asrinvakili/persian-ai-text-detection"
+authors:
+  - family-names: Vakili
+    given-names: Asrin
+    affiliation: "Department of Computer Engineering, National University of Skills, Tehran, Iran"
+keywords:
+  - persian-nlp
+  - llm-detection
+  - parsbert
+  - ai-generated-text-detection
+  - low-resource-nlp
+preferred-citation:
+  type: conference-paper
+  title: "Empirical Evaluation of AI-Generated Text Detection in Persian: Cross-Generator Generalization and Robustness to Paraphrasing"
+  authors:
+    - family-names: Vakili
+      given-names: Asrin
+  conference:
+    name: "2nd International Conference on Management, Computer Science, and Artificial Intelligence (ICMCAI)"
+  year: 2026
+  city: Tehran
+  country: Iran

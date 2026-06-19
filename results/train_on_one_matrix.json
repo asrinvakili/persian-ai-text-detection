@@ -1,0 +1,38 @@
+{
+  "experiment": "train_on_one_ablation",
+  "description": "Three classifiers, each trained on a single AI generator + all human texts. Evaluated on the full test set with per-generator breakdown.",
+  "timestamp": "2026-06-18T13:45:00",
+  "class_weights": [1.0, 1.0],
+  "train_size_per_classifier": 1400,
+  "matrix": {
+    "trained_on_deepseek": {
+      "overall": 0.9625,
+      "by_test_generator": {
+        "deepseek-v3.1": 0.975,
+        "gpt-4o-mini": 0.980,
+        "gemini-2.5-flash-lite": 0.975
+      }
+    },
+    "trained_on_gpt": {
+      "overall": 0.9263,
+      "by_test_generator": {
+        "deepseek-v3.1": 0.825,
+        "gpt-4o-mini": 0.995,
+        "gemini-2.5-flash-lite": 0.910
+      }
+    },
+    "trained_on_gemini": {
+      "overall": 0.9487,
+      "by_test_generator": {
+        "deepseek-v3.1": 0.910,
+        "gpt-4o-mini": 0.960,
+        "gemini-2.5-flash-lite": 0.995
+      }
+    }
+  },
+  "key_findings": [
+    "Training on GPT-4o-mini alone causes the largest generalization drop on DeepSeek (0.825, a 17.5 percentage point drop from baseline 1.000).",
+    "Training on Gemini alone also struggles on DeepSeek (0.910), while training on DeepSeek alone transfers most uniformly.",
+    "Each generator has a distinct stylistic signature that cannot be inferred from a single other generator."
+  ]
+}
